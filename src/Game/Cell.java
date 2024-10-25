@@ -17,7 +17,6 @@ public class Cell {
         this.coords = new int[]{this.x, this.y};
     }
 
-
     public void update() {
         if (this.neighbors > 3) {
             setAlive(false);
