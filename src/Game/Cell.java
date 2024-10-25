@@ -8,12 +8,29 @@ public class Cell {
     private int x;
     private int y;
     private int[] coords;
+    private int neighbors;
 
     public Cell(boolean isAlive, int x, int y) {
         this.isAlive = isAlive;
         this.x = x;
         this.y = y;
         this.coords = new int[]{this.x, this.y};
+    }
+
+
+    public void update() {
+        if (this.neighbors > 3) {
+            setAlive(false);
+        } else if (this.neighbors == 3) {
+            setAlive(true);
+        } else if (this.neighbors < 2) {
+            setAlive(false);
+        }
+    }
+
+    // getters setters
+    public void setNeighbors(int neighbors) {
+        this.neighbors = neighbors;
     }
 
     public boolean getAlive() {
