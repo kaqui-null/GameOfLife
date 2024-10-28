@@ -3,8 +3,6 @@ package Game;
 public class Cell {
 
     private boolean isAlive = false;
-
-
     private int x;
     private int y;
     private int[] coords;
@@ -16,6 +14,7 @@ public class Cell {
         this.y = y;
         this.coords = new int[]{this.x, this.y};
     }
+
 
     public void update() {
         if (this.neighbors > 3) {
